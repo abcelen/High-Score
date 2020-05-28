@@ -1,25 +1,18 @@
 import React from "react";
-import PlayersName from "./PlayersName";
-import PlayersScore from "./PlayersScore";
+import PlayersScore from "./PlayersScore"; //name and score
+import countryScores from "./countryScores"; //data file
 
 const Scoreboard = (props) => {
+  countryScores.sort((a, b) => a.name.localeCompare(b.name));
+
   return (
-    <div className="score-board">
-      <div>
-        <h1> HIGH SCORES: {props.name} </h1>
-      </div>
-      <div className="scorer-names">
-        <div className="score-list-name">
-          {props.countryScores.map((element) => (
-            <PlayersName element={element} />
-          ))}
+    <div>
+      {countryScores.map((country, index) => (
+        <div className="scorelists" key={index}>
+          <div className="countryname">High scores: {country.name}</div>
+          <PlayersScore props={country.scores} />
         </div>
-        <div className="score-list-score">
-          {props.countryScores.map((element) => (
-            <PlayersScore element={element} />
-          ))}
-        </div>
-      </div>
+      ))}
     </div>
   );
 };

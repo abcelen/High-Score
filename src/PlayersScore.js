@@ -1,9 +1,14 @@
 import React from "react";
 
-const PlayersScore = (props) => {
+const PlayersScore = ({ props }) => {
   return (
     <div>
-      <span className="player-score-span">{props.element.s}</span>
+      {props.map((score, index) => (
+        <div className="scorelist" key={index}>
+          <div className="scorename">{score.n}</div>
+          <div className="score">{score.s}</div>
+        </div>
+      ))}
     </div>
   );
 };
