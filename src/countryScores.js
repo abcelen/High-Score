@@ -41,6 +41,7 @@ let countryScores = [
       { n: "selim", s: 900 },
       { n: "mahmut", s: 1000 },
       { n: "morat", s: 999 },
+      { n: "burak", s: 199 },
     ],
   },
   {

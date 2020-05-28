@@ -7,10 +7,10 @@ const Scoreboard = (props) => {
 
   return (
     <div>
-      {countryScores.map((country, index) => (
-        <div className="scorelists" key={index}>
-          <div className="countryname">High scores: {country.name}</div>
-          <PlayersScore props={country.scores} />
+      {countryScores.map((data, index) => (
+        <div className="board" key={index}>
+          <div className="countryname">HIGH SCORES: {data.name}</div>
+          <PlayersScore props={data.scores} />
         </div>
       ))}
     </div>
