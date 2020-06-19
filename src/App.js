@@ -4,7 +4,8 @@ import countryScores from "./countryScores";
 
 const App = () => {
   const [scoreOrder, setScoreOrder] = useState("Sort Ascending");
-  const [country, setCountry] = useState(countryScores);
+  // const [country, setCountry] = useState(countryScores);
+  // console.log(`it is showing ${country}`);
 
   const handleButtonClick = () => {
     if (scoreOrder === "Sort Ascending") {
@@ -16,14 +17,14 @@ const App = () => {
     }
   };
 
-  const handleInputChange = (e) => {
-    const findCountry = e.target.value.toLowerCase();
-    setCountry(
-      countryScores.filter((item) =>
-        item.name.toLowerCase().includes(findCountry)
-      )
-    );
-  };
+  // const handleInputChange = (e) => {
+  //   const findCountry = e.target.value.toLowerCase();
+  //   setCountry(
+  //     countryScores.filter((item) =>
+  //       item.name.toLowerCase().includes(findCountry)
+  //     )
+  //   );
+  // };
   return (
     <div className="App">
       <h1>High Scores Per Country </h1>
@@ -31,12 +32,12 @@ const App = () => {
         {" "}
         {scoreOrder}
       </button>
-      <input
+      {/* <input
         type="text"
         className="input"
         onChange={handleInputChange}
         placeholder="find country"
-      />
+      /> */}
       <Scoreboard />
     </div>
   );
